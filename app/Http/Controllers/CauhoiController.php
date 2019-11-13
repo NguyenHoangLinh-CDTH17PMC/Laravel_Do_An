@@ -47,9 +47,9 @@ class CauhoiController extends Controller
         $cau_hoi-> phuong_an_d =$request->phuong_an_d;
         $cau_hoi-> dap_an =$request->dap_an;
         $cau_hoi->save();
-        return "Thêm mới thành công";
-    }
+        return redirect()->action('CauhoiController@danhsach');
 
+    }
     /**
      * Display the specified resource.
      *
