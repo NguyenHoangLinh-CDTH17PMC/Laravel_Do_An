@@ -70,7 +70,7 @@
                     <tr>
                          <td>{{$Cauhoi->id}}</td>
                         <td><p>{{$Cauhoi->noidung}}</p></td>
-                        <td>{{$Cauhoi->linh_vuc_id}}</td>
+                        <td>{{$Cauhoi->linhVuc->ten_linh_vuc}}</td>
                         <td>{{$Cauhoi->phuong_an_a}}</td>
                         <td>{{$Cauhoi->phuong_an_b}}</td>
                         <td>{{$Cauhoi->phuong_an_c}}</td>
