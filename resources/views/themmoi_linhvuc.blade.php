@@ -7,7 +7,7 @@
     	@csrf
         <div class="form-group">
             <label for="exampleInputEmail1" style="font-size: 20px;font-family: Tahoma">Tên lĩnh vực</label>
-            <input type="text" style="width: 30%; "  class="form-control" id="ten_linh_vuc" name="ten_linh_vuc" placeholder="Thêm mới lĩnh vực">
+            <input type="text" style="width: 30%; "  class="form-control" id="ten_linh_vuc" name="ten_linh_vuc" placeholder="Thêm mới lĩnh vực" required>
         </div>
         <button type="submit" class="btn btn-primary waves-effect waves-light">Lưu</button>
     </form>
