@@ -69,9 +69,10 @@ class CauhoiController extends Controller
      */
     public function edit($id)
     {
-    
+        $dscauhoi = CauHoi::find($id);
+        $lv = LinhVuc::find($id);
         $dslinhvuc= Linhvuc::all();
-        return view('capnhat_cauhoi',compact('dslinhvuc'),['id'=>$id]);
+        return view('capnhat_cauhoi',compact('dscauhoi','dslinhvuc','lv'),['id'=>$id]);
     }
 
     /**

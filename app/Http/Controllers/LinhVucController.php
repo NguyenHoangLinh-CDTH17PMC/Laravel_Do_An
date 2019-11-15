@@ -61,8 +61,9 @@ class LinhVucController extends Controller
      */
     public function edit($id)
     {
-        
-        return view('capnhat_linhvuc',['id'=>$id]);
+
+        $lv = LinhVuc::find($id);
+        return view('capnhat_linhvuc',['id'=>$id,'tenlv'=>$lv->ten_linh_vuc]);
         
 
     }
