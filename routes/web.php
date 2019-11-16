@@ -20,9 +20,9 @@ Route::get('logout','AdminController@dangXuat')->name('logout');
 
 
 
+//Auth::routes();
+//Route::middleware('auth')->group(function(){
 
-Auth::routes();
-Route::middleware('auth')->group(function(){
 	Route::prefix('cauhoi')->group(function(){
 		Route::name('cauhoi.')->group(function(){
 			Route::get('/', 'CauhoiController@index')->name('danhsach');
@@ -44,4 +44,17 @@ Route::middleware('auth')->group(function(){
 			Route::get('/{id}/xoa', 'LinhvucController@destroy')->name('xoa');
 		});
 	});
-});
+	Route::prefix('nguoichoi')->group(function(){
+		Route::name('nguoichoi.')->group(function(){
+			//Route::get('/','LinhvucController@capnhatlinhvuc')->name('capnhatlinhvuc');
+			Route::get('/', 'NguoiChoiController@index')->name('danhsach');
+
+			Route::get('/themmoi', 'NguoiChoiController@create')->name('themmoi');
+			Route::post('/themmoi', 'NguoiChoiController@store')->name('xulythemmoi');
+
+			Route::post('/{id}/capnhat', 'NguoiChoiController@update')->name('capnhat');
+			Route::get('/{id}/capnhat', 'NguoiChoiController@edit')->name('xulycapnhat');
+			Route::get('/{id}/xoa', 'NguoiChoiController@destroy')->name('xoa');
+		});
+	});
+//});

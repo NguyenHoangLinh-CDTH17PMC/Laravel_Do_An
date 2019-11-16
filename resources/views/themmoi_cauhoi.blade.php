@@ -28,7 +28,7 @@
         </div><div class="form-group">
             <label for="exampleInputEmail1">Phương án B</label>
             <input type="text"    class="form-control" id="phuong_an_b" name="phuong_an_b">
-        </div>
+        </div>  
       </div>
     <div class="col-lg-6">
       	<div class="form-group">
