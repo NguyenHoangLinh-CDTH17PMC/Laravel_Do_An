@@ -60,6 +60,7 @@
                         <th>Ảnh đại diện</th>
                         <th>Điểm cao nhất</th>
                         <th>Credit</th>
+                        <th>Xóa/Sữa</th>
                     </tr>
                 </thead>
                     @foreach( $Nguoichoi as $nguoichoi)
@@ -70,8 +71,14 @@
                         <td>{{$nguoichoi->anh_dai_dien}}</td>
                         <td>{{$nguoichoi->diem_cao_nhat}}</td>
                         <td>{{$nguoichoi->credit}}</td>
-                        <td><a href=""><button  type="button" class="btn btn-danger waves-effect waves-light"><i class="fas fa-pencil-alt"></i></button></a>
-                        <a href=""><button type="submit" class="btn btn-danger waves-effect waves-light"><i class=" fas fa-trash-alt"></i></button></a>
+                        <td><a href="">
+                            <button  type="button" class="btn btn-danger waves-effect waves-light"><i class="fas fa-pencil-alt"></i></button></a>
+                            <form method="POST" action="{{route('nguoichoi.xoa',$nguoichoi->id)}}" onsubmit="return check_register();">
+                                {{method_field('DELETE') }}
+                                {{csrf_field()}};
+                            <button type="submit" class="btn btn-danger waves-effect waves-light"><i class=" fas fa-trash-alt" onclick="return confirm('Bạn có muốn xóa dữ liệu')"></i></button>
+                            </form>
+                        
                         </td>
                     </tr>
                     @endforeach</td>
@@ -94,3 +101,4 @@
                     @endphp
                 @endif
 @endsection
+

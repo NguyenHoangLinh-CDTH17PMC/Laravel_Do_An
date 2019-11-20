@@ -54,7 +54,7 @@ Route::get('logout','AdminController@dangXuat')->name('logout');
 
 			Route::post('/{id}/capnhat', 'NguoiChoiController@update')->name('capnhat');
 			Route::get('/{id}/capnhat', 'NguoiChoiController@edit')->name('xulycapnhat');
-			Route::get('/{id}/xoa', 'NguoiChoiController@destroy')->name('xoa');
+			Route::delete('/xoa/{id}', 'NguoiChoiController@destroy')->name('xoa');
 		});
 	});
 //});

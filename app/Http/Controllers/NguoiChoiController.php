@@ -90,6 +90,8 @@ class NguoiChoiController extends Controller
      */
     public function destroy($id)
     {
-        //
+       Nguoichoi::where('id',$id)->delete();
+       return redirect('nguoichoi')->with('success','Xóa thành công');
     }
+  
 }
