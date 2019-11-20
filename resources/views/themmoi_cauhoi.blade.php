@@ -11,37 +11,38 @@
     	<div class="col-sm-6">
       	<div class="form-group">
             <label for="exampleInputEmail1">Nội dung</label>
-            <input type="text"    class="form-control" id="noidung" name="noidung">
+            <input type="text"    class="form-control" id="noidung" name="noidung" required>
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1" >Lĩnh vực</label>
             <select class="custom-select " id="linh_vuc_id" name="linh_vuc_id">
             <option selected="">Mời chọn lĩnh vực</option>
             @foreach($dslinhvuc as $Linhvuc)
-            <option value="{{$Linhvuc->id}}">{{$Linhvuc->ten_linh_vuc}}</option>
+            <option value="{{$Linhvuc->id}}">{{$Linhvuc->ten_linh_vuc}} </option>
             @endforeach
         </select>
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">Phương án A</label>
-            <input type="text"    class="form-control" id="phuong_an_a" name="phuong_an_a">
+            <input type="text"    class="form-control" id="phuong_an_a" name="phuong_an_a" required>
         </div><div class="form-group">
             <label for="exampleInputEmail1">Phương án B</label>
-            <input type="text"    class="form-control" id="phuong_an_b" name="phuong_an_b">
-        </div>  
+
+            <input type="text"    class="form-control" id="phuong_an_b" name="phuong_an_b" required>
+        </div>
       </div>
     <div class="col-lg-6">
       	<div class="form-group">
             <label for="exampleInputEmail1">Phương án C<style type="text/css"></style></label>
-            <input type="text"    class="form-control" id="phuong_an_c" name="phuong_an_c">
+            <input type="text"    class="form-control" id="phuong_an_c" name="phuong_an_c" required>
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">Phương án D</label>
-            <input type="text"    class="form-control" id="phuong_an_d" name="phuong_an_d">
+            <input type="text"    class="form-control" id="phuong_an_d" name="phuong_an_d" required>
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">Đáp án </label>
-            <input type="text"    class="form-control" id="dap_an" name="dap_an">
+            <input type="text"    class="form-control" id="dap_an" name="dap_an" required>
         </div>
         <div class="form-group">
         	<button style="width: 100%;margin-top: 30px" type="submit" class="btn btn-primary waves-effect waves-light">Lưu</button>
