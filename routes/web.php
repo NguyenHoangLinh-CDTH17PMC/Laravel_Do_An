@@ -52,8 +52,9 @@ Route::get('logout','AdminController@dangXuat')->name('logout');
 			Route::get('/themmoi', 'NguoiChoiController@create')->name('themmoi');
 			Route::post('/themmoi', 'NguoiChoiController@store')->name('xulythemmoi');
 
-			Route::post('/{id}/capnhat', 'NguoiChoiController@update')->name('capnhat');
-			Route::get('/{id}/capnhat', 'NguoiChoiController@edit')->name('xulycapnhat');
+			Route::post('/capnhat/{id}', 'NguoiChoiController@update')->name('capnhat');
+			Route::get('/capnhat/{id}', 'NguoiChoiController@edit')->name('xulycapnhat');
+
 			Route::delete('/xoa/{id}', 'NguoiChoiController@destroy')->name('xoa');
 		});
 	});

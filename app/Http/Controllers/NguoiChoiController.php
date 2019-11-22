@@ -67,7 +67,8 @@ class NguoiChoiController extends Controller
      */
     public function edit($id)
     {
-        //
+       $nguoichoi=Nguoichoi::find($id);
+       return View('Update_nguoi_choi',compact('nguoichoi'));
     }
 
     /**
@@ -79,7 +80,16 @@ class NguoiChoiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $nguoichoi=Nguoichoi::find($id);
+        $nguoichoi -> ten_dang_nhap = $request->ten_dang_nhap;
+        $nguoichoi -> mat_khau= $request->mat_khau;
+        $nguoichoi -> email= $request->email;
+        $nguoichoi -> anh_dai_dien= $request->anh_dai_dien;
+        $nguoichoi -> diem_cao_nhat= $request->diem_cao_nhat;
+        $nguoichoi -> credit= $request->credit;
+        $nguoichoi ->save();
+        return redirect('nguoichoi')->with('themthanhcong','Xóa thành công');    
+
     }
 
     /**

@@ -71,7 +71,7 @@
                         <td>{{$nguoichoi->anh_dai_dien}}</td>
                         <td>{{$nguoichoi->diem_cao_nhat}}</td>
                         <td>{{$nguoichoi->credit}}</td>
-                        <td><a href="">
+                        <td><a href="{{route('nguoichoi.xulycapnhat',$nguoichoi->id)}}">
                             <button  type="button" class="btn btn-danger waves-effect waves-light"><i class="fas fa-pencil-alt"></i></button></a>
                             <form method="POST" action="{{route('nguoichoi.xoa',$nguoichoi->id)}}" onsubmit="return check_register();">
                                 {{method_field('DELETE') }}
