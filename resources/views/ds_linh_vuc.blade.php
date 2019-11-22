@@ -49,7 +49,6 @@
         <div class="card-body">
             <h4  class="header-title" style="font-family: Tahoma">DANH SÁCH LĨNH VỰC</h4>
             <a href="{{route('linhvuc.themmoi')}}" type="button" class="btn btn-warning waves-effect waves-light">Thêm mới lĩnh vực <i class="mdi mdi-pen-plus"></i></a>
-            
 
             <table id="linhvuc-datatable" class="table dt-responsive nowrap">
                 <thead>

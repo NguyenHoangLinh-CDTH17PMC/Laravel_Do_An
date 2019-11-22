@@ -47,9 +47,7 @@
 <div class="col-12">
     <div class="card">
         <div class="card-body">
-            <h4  class="header-title" style="font-family: Tahoma">DANH SÁCH CÂU HỎI</h4>
-                        <a href="{{route('cauhoi.themmoi')}}" type="button" class="btn btn-warning waves-effect waves-light">Thêm mới câu hỏi <i class="mdi mdi-pen-plus"></i></a>
-                        <a href="{{route('cauhoi.thungrac')}}" type="button" class="btn btn-warning waves-effect waves-light">Thùng rác <i class="mdi mdi-pen-plus"></i></a>
+            <h4  class="header-title" style="font-family: Tahoma">DANH SÁCH CÂU HỎI</h4>                       
             <table id="cauhoi-datatable" class="table dt-responsive nowrap">
                 <thead>
                     <tr>
@@ -67,24 +65,23 @@
             
                 <tbody>
                      @foreach($dscauhoi as $Cauhoi)
+                     @if($Cauhoi->deleted_at != null)
                     <tr>
                          <td>{{$Cauhoi->id}}</td>
                         <td><p>{{$Cauhoi->noidung}}</p></td>
-                        <td>{{$Cauhoi->linhVuc->ten_linh_vuc}}</td>
                         <td>{{$Cauhoi->phuong_an_a}}</td>
                         <td>{{$Cauhoi->phuong_an_b}}</td>
                         <td>{{$Cauhoi->phuong_an_c}}</td>
                         <td>{{$Cauhoi->phuong_an_d}}</td>
                         <td>{{$Cauhoi->dap_an}}</td>                    
                         <td>
-                        <a href="{{ route('cauhoi.capnhat',['id'=>$Cauhoi->id])}}">
+                        <a href="{{ route('cauhoi.khoiphuc',['id'=>$Cauhoi->id])}}">
                             <button type="button" class="btn btn-danger waves-effect waves-light"><i class="fas fa-pencil-alt"></i></button>
                         </a>
-                        <a href="{{ route('cauhoi.xoa',['id'=>$Cauhoi->id])}}">
-                            <button type="button" class="btn btn-danger waves-effect waves-light"><i class=" fas fa-trash-alt"></i></button>
-                        </a>
+                  
                     </td>
                     </tr>
+                    @endif
                     @endforeach
 				<tbody>
             </table>

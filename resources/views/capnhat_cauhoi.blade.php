@@ -16,7 +16,7 @@
         <div class="form-group">
             <label for="exampleInputEmail1" >Lĩnh vực</label>
             <select class="custom-select " id="linh_vuc_id" name="linh_vuc_id">
-                <option  >{{ $lv->ten_linh_vuc }}</option>
+                <option  >{{ $dscauhoi->linhVuc->ten_linh_vuc }}</option>
                 @foreach($dslinhvuc as $Linhvuc)
                 <option value="{{$Linhvuc->id}}">{{$Linhvuc->ten_linh_vuc}}</option>
                 @endforeach

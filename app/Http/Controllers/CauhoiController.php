@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Cauhoi;
 use App\Linhvuc;
+use Illuminate\Support\Facades\DB;
 class CauhoiController extends Controller
 {
     /**
@@ -14,7 +15,7 @@ class CauhoiController extends Controller
      */
     public function index()
     {
-        $dscauhoi = Cauhoi::all();
+        $dscauhoi = CauHoi::all();
         return view('cauhoi',compact('dscauhoi'));
     }
 
@@ -30,6 +31,18 @@ class CauhoiController extends Controller
         return view('themmoi_cauhoi',compact('dslinhvuc'));  
     }
 
+     /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function restore($id)
+    {
+        $dscauhoi = CauHoi::withTrashed()->find($id);
+        $dscauhoi->restore();
+        return redirect()->route('cauhoi.danhsach');
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -47,7 +60,7 @@ class CauhoiController extends Controller
         $cau_hoi-> phuong_an_d =$request->phuong_an_d;
         $cau_hoi-> dap_an =$request->dap_an;
         $cau_hoi->save();
-        return redirect()->action('CauhoiController@danhsach');
+        return redirect()->action('CauhoiController@index');
 
     }
     /**
@@ -70,9 +83,8 @@ class CauhoiController extends Controller
     public function edit($id)
     {
         $dscauhoi = CauHoi::find($id);
-        $lv = LinhVuc::find($id);
         $dslinhvuc= Linhvuc::all();
-        return view('capnhat_cauhoi',compact('dscauhoi','dslinhvuc','lv'),['id'=>$id]);
+        return view('capnhat_cauhoi',compact(['dscauhoi','dslinhvuc']),['id'=>$id]);
     }
 
     /**
@@ -116,5 +128,9 @@ class CauhoiController extends Controller
         $id = Cauhoi::find($sId);
         $id->delete();
         return redirect()->route('cauhoi.danhsach');
+    }
+    public function recycle(){
+        $dscauhoi = DB::table('cau_hoi')->get();
+        return view('cau_hoi_thungrac',compact('dscauhoi'));
     }
 }

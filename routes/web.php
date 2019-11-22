@@ -26,11 +26,14 @@ Route::middleware('auth')->group(function(){
 	Route::prefix('cauhoi')->group(function(){
 		Route::name('cauhoi.')->group(function(){
 			Route::get('/', 'CauhoiController@index')->name('danhsach');
+			Route::get('/thungrac', 'CauhoiController@recycle')->name('thungrac');
+			Route::get('/{id}/thungrac', 'CauhoiController@restore')->name('khoiphuc');
 			Route::get('/themmoi', 'CauhoiController@create')->name('themmoi');
 			Route::post('/themmoi', 'CauhoiController@store')->name('xulythemmoi');
 			Route::get('/{id}/capnhat', 'CauhoiController@edit')->name('capnhat');
 			Route::post('/{id}/capnhat', 'CauhoiController@update')->name('xulycapnhat');
 			Route::get('/{id}/xoa', 'CauhoiController@destroy')->name('xoa');
+			
 		});
 	});
 	Route::prefix('linhvuc')->group(function(){
