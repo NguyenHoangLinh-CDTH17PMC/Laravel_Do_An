@@ -27,6 +27,7 @@
             <input type="text"    class="form-control" id="phuong_an_a" name="phuong_an_a" required>
         </div><div class="form-group">
             <label for="exampleInputEmail1">Phương án B</label>
+
             <input type="text"    class="form-control" id="phuong_an_b" name="phuong_an_b" required>
         </div>
       </div>

@@ -350,7 +350,7 @@
             </li>
 
             <li class="has-submenu">
-                <a href="#"> <i class="la la-briefcase"></i>Elements <div class="arrow-down"></div></a>
+                <a href="{{route('nguoichoi.danhsach')}}"> <i class="la la-briefcase"></i>Người chơi <div class="arrow-down"></div></a>
                 <ul class="submenu megamenu">
                     <li>
                         <ul>
