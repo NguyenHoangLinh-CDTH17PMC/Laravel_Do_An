@@ -10,16 +10,33 @@
 
     <h5 class="auth-title">Sign In</h5>
 
+    <!-- Hiển thị thông báo lỗi khi Validate -->
+    @if($errors->any())
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">×</span>
+        </button>
+        <ul>
+            @foreach($errors->all() as $error)
+            <li>
+               {{$error}}
+            </li>
+            @endforeach
+        </ul>
+    </div>
+
+    @endif
+
     <form action="{{route('xu_ly_dang_nhap')}}" method="POST">
         @csrf
         <div class="form-group mb-3">
             <label for="emailaddress">Email address</label>
-            <input class="form-control" type="text" name="ten_dang_nhap" id="emailaddress" required="" placeholder="Enter your email">
+            <input class="form-control" type="text" name="ten_dang_nhap" id="emailaddress"  placeholder="Enter your email">
         </div>
 
         <div class="form-group mb-3">
             <label for="password">Password</label>
-            <input class="form-control" type="password" name="mat_khau" required="" id="password" placeholder="Enter your password">
+            <input class="form-control" type="password" name="mat_khau"  id="password" placeholder="Enter your password">
         </div>
 
         <div class="form-group mb-3">

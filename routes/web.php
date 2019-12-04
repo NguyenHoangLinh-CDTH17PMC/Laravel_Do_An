@@ -18,8 +18,6 @@ Route::get('/','AdminController@index')->name('login');
 
 Route::get('logout','AdminController@dangXuat')->name('logout');
 
-
-
 //Auth::routes();
 //Route::middleware('auth')->group(function(){
 

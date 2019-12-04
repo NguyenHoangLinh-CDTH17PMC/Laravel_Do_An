@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Admin;
 use  Illuminate\Support\Facades\Hash;
+use App\Http\Requests\DangNhapRequest;
 class AdminController extends Controller
 {
     protected $redirectTo='danhsach';
@@ -36,7 +37,7 @@ class AdminController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(DangNhapRequest $request)
     {
         $ten_dang_nhap = $request->ten_dang_nhap;
         $mat_khau = $request->mat_khau;
