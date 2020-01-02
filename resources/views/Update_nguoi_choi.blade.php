@@ -4,7 +4,7 @@
     <div class="col-lg-12">
         <div class="card">
         <div class="card-body">
-            <h4 class="mb-3 header-title" style="text-align: center"><b style="font-size: 30px;font-family: Tahoma">THÊM MỚI NGƯỜI CHƠI</b></h4>
+            <h4 class="mb-3 header-title" style="text-align: center"><b style="font-size: 30px;font-family: Tahoma">CẬP NHẬT NGƯỜI CHƠI</b></h4>
       <form action="{{route('nguoichoi.capnhat',$nguoichoi->id)}}" method="POST">
                         @csrf
         <div class="row">

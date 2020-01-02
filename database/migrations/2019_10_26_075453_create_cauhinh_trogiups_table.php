@@ -13,7 +13,7 @@ class CreateCauhinhTrogiupsTable extends Migration
      */
     public function up()
     {
-        Schema::create('cauhinh_trogiups', function (Blueprint $table) {
+        Schema::create('cauhinh_trogiup', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('loai_tr_giup');
             $table->integer('thu_tu');

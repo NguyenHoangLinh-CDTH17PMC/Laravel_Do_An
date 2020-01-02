@@ -15,11 +15,9 @@ class CreateLuotchoisTable extends Migration
     {
         Schema::create('luot_choi', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('luot_choi_id');
-            $table->unsignedInteger('cau_hoi_id');
-            $table->foreign('cau_hoi_id')->references('id')->on('cau_hoi');
-            $table->foreign('luot_choi_id')->references('id')->on('luot_choi');
-            $table->string('phuong_an');
+            $table->unsignedInteger('nguoi_choi_id');
+            $table->unsignedInteger('so_cau');
+            $table->foreign('nguoi_choi_id')->references('id')->on('nguoichois');
             $table->integer('diem');
             $table->timestamps();
         });
