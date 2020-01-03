@@ -50,7 +50,7 @@
             <h4  class="header-title" style="font-family: Tahoma">DANH SÁCH CÂU HỎI</h4>
                         <a href="{{route('cauhoi.themmoi')}}" type="button" class="btn btn-warning waves-effect waves-light">Thêm mới câu hỏi <i class="mdi mdi-pen-plus"></i></a>
                         <a href="{{route('cauhoi.thungrac')}}" type="button" class="btn btn-warning waves-effect waves-light">Thùng rác <i class="mdi mdi-pen-plus"></i></a>
-            <table id="cauhoi-datatable" class="table dt-responsive nowrap">
+            <table id="cauhoi-datatable" class="table dt-responsive nowrap"  style="max-width: 800px">
                 <thead>
                     <tr>
                         <th>ID</th>

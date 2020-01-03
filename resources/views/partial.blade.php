@@ -392,8 +392,8 @@
             </li>
 
             <li class="has-submenu">
-                <a href="#">
-                    <i class="la la-diamond"></i>Components <div class="arrow-down"></div></a>
+            <a href="{{route('goi_credit.danh-sach')}}">
+                    <i class="la la-diamond"></i>Credit <div class="arrow-down"></div></a>
                 <ul class="submenu">
                     <li class="has-submenu">
                         <a href="#"><i class="fe-bookmark mr-1"></i> Forms <div class="arrow-down"></div></a>

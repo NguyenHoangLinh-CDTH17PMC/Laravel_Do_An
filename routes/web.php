@@ -59,4 +59,19 @@ Route::get('logout','AdminController@dangXuat')->name('logout');
 			Route::delete('/xoa/{id}', 'NguoiChoiController@destroy')->name('xoa');
 		});
 	});
+	Route::prefix('/goi_credit')->group(function(){
+        Route::name('goi_credit.')->group(function(){
+            Route::get('/','GoiCreditController@index')->name('danh-sach');
+            Route::get('/them-moi','GoiCreditController@create')->name('them-moi');
+            Route::post('/luu-tru','GoiCreditController@store')->name('luu-tru');
+            Route::get('{id}/chinh-sua','GoiCreditController@edit')->name('chinh-sua');
+            Route::post('{id}/cap-nhat','GoiCreditController@update')->name('cap-nhat');
+            Route::get('{id}/xoa','GoiCreditController@destroy')->name('xoa');
+            Route::get('{id}/khoi-phuc','GoiCreditController@restore')->name('khoi-phuc');
+            Route::get('/thung_rac','GoiCreditController@recycle')->name('thung_rac');
+        });
+    });
+
+
+    Route::get('ds_lichsumuacredit','LichSuMuaCreditController@index')->name('ds_lichsumuacredit');
 //});
