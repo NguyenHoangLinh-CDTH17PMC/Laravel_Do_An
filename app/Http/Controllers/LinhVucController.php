@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 use App\Linhvuc;
 use Illuminate\Http\Request;
-
+use App\Http\Requests\ThemLinhVucRequest;
+use App\Http\Requests\CapNhatLinhVucRequest;
 class LinhVucController extends Controller
 {
     /**
@@ -33,7 +34,7 @@ class LinhVucController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ThemLinhVucRequest $request)
     {
         $linh_vuc = new  Linhvuc;
         $linh_vuc-> ten_linh_vuc =$request->ten_linh_vuc;
@@ -75,7 +76,7 @@ class LinhVucController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update($id,Request $request)
+    public function update($id,CapNhatLinhVucRequest $request)
     {
         Linhvuc::where('id',$id)->update(['ten_linh_vuc'=> $request->ten_linh_vuc]);
         return redirect()->action('LinhvucController@index');

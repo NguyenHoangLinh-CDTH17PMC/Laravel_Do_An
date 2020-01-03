@@ -13,9 +13,14 @@ class ThemLinhVucSeeder extends Seeder
     public function run()
     {
         $data=[
-        	['ten_linh_vuc'=>'Lập trình'],
-        	['ten_linh_vuc'=>'Toán'],
+        	['ten_linh_vuc'=>'Thể Thao'],
         	['ten_linh_vuc'=>'Lịch sử'],
+        	['ten_linh_vuc'=>'Âm nhạc-Phim'],
+        	['ten_linh_vuc'=>'Địa lý'],
+        	['ten_linh_vuc'=>'Văn học'],
+        	['ten_linh_vuc'=>'Y học'],
+        	['ten_linh_vuc'=>'Văn hóa-sự kiện'],
+        	['ten_linh_vuc'=>'Khoa học tự nhiên'],
         ];
 
         foreach ($data as $dt) {

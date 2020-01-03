@@ -2,7 +2,22 @@
 @section('maincontent')
 <div class="card-body">
     <h4 class="mb-3 header-title"><b style="font-size: 30px;font-family: Tahoma">CẬP NHẬT LĨNH VỰC {{ $id}}</b></h4>
+    <!-- Hiển thị thông báo lỗi khi Validate -->
+    @if($errors->any())
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">×</span>
+        </button>
+        <ul>
+            @foreach($errors->all() as $error)
+            <li>
+            {{$error}}
+            </li>
+            @endforeach
+        </ul>
+    </div>
 
+    @endif
     <form action="{{route('linhvuc.capnhat',['id'=>$id]) }}" method="POST">
     	@csrf
         <div class="form-group">

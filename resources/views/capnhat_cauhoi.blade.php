@@ -4,7 +4,23 @@
     <div class="col-lg-12">
         <div class="card">
 		<div class="card-body">
-    		<h4 class="mb-3 header-title" style="text-align: center"><b style="font-size: 30px;font-family: Tahoma">CẬP NHẬT CÂU HỎI</b></h4>
+            <h4 class="mb-3 header-title" style="text-align: center"><b style="font-size: 30px;font-family: Tahoma">CẬP NHẬT CÂU HỎI</b></h4>
+            <!-- Hiển thị thông báo lỗi khi Validate -->
+            @if($errors->any())
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <ul>
+                    @foreach($errors->all() as $error)
+                    <li>
+                    {{$error}}
+                    </li>
+                    @endforeach
+                </ul>
+            </div>
+        
+        @endif
       <form action="{{route('cauhoi.capnhat',['id'=>$id])}}" method="POST">
     					@csrf
     	<div class="row">

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Cauhoi;
 use App\Linhvuc;
 use Illuminate\Support\Facades\DB;
+use App\Http\Requests\ThemCauHoiRequest;
+use App\Http\Requests\CapNhatCauHoiRequest;
 class CauhoiController extends Controller
 {
     /**
@@ -49,7 +51,7 @@ class CauhoiController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ThemCauHoiReQuest $request)
     {
         $cau_hoi = new  Cauhoi;
         $cau_hoi-> noidung =$request->noidung;
@@ -94,7 +96,7 @@ class CauhoiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CapNhatCauHoiRequest $request, $id)
     {
         $cau_hoi = new Cauhoi;
         $cau_hoi->noidung = $request->noidung;
